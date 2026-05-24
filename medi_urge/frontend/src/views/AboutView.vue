@@ -28,10 +28,10 @@
             <hr class="w-75 mx-auto mb-4 opacity-25">
             
             <div class="d-flex justify-content-center gap-3 mt-auto">
-              <a :href="member.github" target="_blank" class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" title="GitHub">
+              <a :href="member.github" target="_blank" class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" title="GitHub">GitHub
                 <i class="bi bi-github fs-5"></i>
               </a>
-              <a :href="member.linkedin" target="_blank" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" title="LinkedIn">
+              <a :href="member.linkedin" target="_blank" class="btn btn-outline-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;" title="LinkedIn">linkedin
                 <i class="bi bi-linkedin fs-5"></i>
               </a>
             </div>
