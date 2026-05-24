@@ -8,6 +8,7 @@ import SearchView from './views/SearchView.vue'
 import AdminDashboard from './views/AdminDashboard.vue'
 //import HospitalDetail from './views/HospitalDetail.vue'
 import HospitalDashboard from './views/HospitalDashboard.vue'
+import AboutView from '../views/AboutView.vue'
 
 const routes = [
   { path: '/', component: SearchView },
