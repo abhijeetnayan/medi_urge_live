@@ -1,0 +1,18 @@
+# Python / Backend
+__pycache__/
+venv/
+env/
+*.db
+*.sqlite3
+.env
+
+# Node / Frontend (If  frontend is inside a subfolder, make sure it has its own .gitignore too)
+node_modules/
+dist/
+npm-debug.log*
+.env.local
+medi_urge/frontend/src/views/HospitalDashboard2.vue
+medi_urge/frontend/src/views/HospitalDetail.vue
+medi_urge/frontend/src/views/SearchView2.vue
+medi_urge/frontend/src/views/SearchView3.vue
+medi_urge/frontend/src/views/SearchView4.vue
