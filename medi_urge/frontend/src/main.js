@@ -13,8 +13,14 @@ const routes = [
   { path: '/', component: SearchView },
   { path: '/admin', component: AdminDashboard },
   //{path: '/hospital/:id', component: HospitalDetail }
-  { path: '/hospital/:id/dashboard', component: HospitalDashboard } // The :id is crucial!
-  
+  { path: '/hospital/:id/dashboard', component: HospitalDashboard }, // The :id is crucial!
+
+
+
+  {
+  path: '/about',
+  name: 'about',
+  component: AboutView}
 ]
 
 const router = createRouter({
