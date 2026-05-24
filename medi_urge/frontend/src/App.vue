@@ -4,7 +4,7 @@
       <router-link class="navbar-brand fw-bold" to="/">Medi Urge</router-link>
       <div class="navbar-nav">
         <router-link class="nav-link" to="/">Find Resources</router-link>
-        <router-link class="nav-link" to="/HospitalDashboard">About Developer</router-link>
+        <router-link class="nav-link" to="/about">About Developer</router-link>
       </div>
     </div>
   </nav>
