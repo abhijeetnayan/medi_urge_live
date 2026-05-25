@@ -41,7 +41,7 @@
             <div class="inventory-display-box">
             
             
-            <h1 class="display-4 fw-black mb-0 tabular-text" :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
+            <h1 class="display-4 fw-black mb-0 " :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
               {{ res.available }}
             </h1>
             </div>
