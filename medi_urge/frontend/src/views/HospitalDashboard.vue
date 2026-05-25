@@ -41,7 +41,7 @@
             <h1 class="display-4 fw-black mb-0" :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
               {{ res.available }}
             </h1>
-            <p class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</p>
+            <h1> class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</h1>
             
             <div class="d-flex justify-content-center gap-3 mt-auto">
               <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
@@ -258,4 +258,12 @@ const requestHistory = computed(() => {
 
 <style scoped>
 .fw-black { font-weight: 900; }
+
+  .inventory-number {
+  font-variant-numeric: tabular-nums; /* Forces all numbers to be the exact same width */
+  min-height: 80px; /* Prevents the container from collapsing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 </style>
