@@ -34,20 +34,22 @@
           </button>
 
 
-          <div class="card-body text-center p-4 d-flex flex-column h-100">
+          <div class="card-body text-center p-4 position-relative pb-5"   style="min-height: 250px;>
             <h6 class="text-uppercase text-muted fw-bold mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
               {{ res.type }}
             </h6>
-            <div class="inventory-display-box">
             
+            <div style="width: 150px; margin: 0 auto; display: block; text-align: center;">
             
-            <h1 class="display-4 fw-black mb-0 " :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
+            <h1 class="display-4 fw-black mb-0" 
+        :class="res.available <= 2 ? 'text-danger' : 'text-dark'" 
+        style="font-family: monospace, monospace !important; letter-spacing: -2px;"> :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
               {{ res.available }}
             </h1>
             </div>
-            <p class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</p>
+            <p class="small text-muted mt-2 mb-0">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</p>
             
-            <div class="d-flex justify-content-center gap-3 mt-auto">
+            <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4 d-flex gap-4 w-100 justify-content-center">
               <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center btn-rigid" style="width: 45px; height: 45px; flex-shrink: 0;">
                 -
               </button>
@@ -263,28 +265,6 @@ const requestHistory = computed(() => {
 <style scoped>
 .fw-black { font-weight: 900; }
 
- /* 1. Locks the container completely */
-.inventory-display-box {
-  width: 100%;
-  min-height: 90px;
-  display: grid;
-  place-items: center; /* Grid centering is completely immune to child width changes */
-  margin: 10px 0;
-}
 
-/* 2. Forces exact number widths, even if the primary font fails */
-.tabular-text {
-  font-variant-numeric: tabular-nums;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing: -1px; /* Keeps the monospace font looking tight and professional */
-  line-height: 1;
-}
-
-/* 3. Locks the button size permanently */
-.btn-rigid {
-  width: 45px !important;
-  height: 45px !important;
-  flex-shrink: 0 !important;
-}
 
 </style>
