@@ -38,16 +38,20 @@
             <h6 class="text-uppercase text-muted fw-bold mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
               {{ res.type }}
             </h6>
-            <h1 class="display-4 fw-black mb-0" :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
+            <div class="inventory-display-box">
+            
+            
+            <h1 class="display-4 fw-black mb-0 tabular-text" :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
               {{ res.available }}
             </h1>
-            <h1 class="display-4 fw-black mb-0 inventory-number">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</h1>
+            </div>
+            <p class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</p>
             
             <div class="d-flex justify-content-center gap-3 mt-auto">
-              <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+              <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;">
                 -
               </button>
-              <button @click="updateResource(res.type, 1)" class="btn btn-outline-success rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
+              <button @click="updateResource(res.type, 1)" class="btn btn-outline-success rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;">
                 +
               </button>
             </div>
@@ -259,11 +263,20 @@ const requestHistory = computed(() => {
 <style scoped>
 .fw-black { font-weight: 900; }
 
-  .inventory-number {
-  font-variant-numeric: tabular-nums; /* Forces all numbers to be the exact same width */
-  min-height: 80px; /* Prevents the container from collapsing */
+ /* Locks the exact width and height so the card never shifts */
+.inventory-display-box {
+  width: 120px; 
+  height: 80px;
+  margin: 0 auto; /* Centers the box perfectly inside the card */
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+/* Forces the digits to be equal width so the text itself doesn't wobble */
+.tabular-text {
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
 </style>
