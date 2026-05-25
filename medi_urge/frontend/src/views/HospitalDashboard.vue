@@ -41,7 +41,7 @@
             <h1 class="display-4 fw-black mb-0" :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
               {{ res.available }}
             </h1>
-            <h1> class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</h1>
+            <h1 class="display-4 fw-black mb-0 inventory-number">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</h1>
             
             <div class="d-flex justify-content-center gap-3 mt-auto">
               <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px;">
