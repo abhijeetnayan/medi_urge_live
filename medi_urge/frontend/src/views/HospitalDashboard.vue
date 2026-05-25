@@ -41,9 +41,8 @@
             
             <div style="width: 150px; margin: 0 auto; display: block; text-align: center;">
             
-            <h1 class="display-4 fw-black mb-0" 
-        :class="res.available <= 2 ? 'text-danger' : 'text-dark'" 
-        style="font-family: monospace, monospace !important; letter-spacing: -2px;"> :class="res.available <= 2 ? 'text-danger' : 'text-dark'">
+            <h1 class="display-4 fw-black mb-0" :class="res.available <= 2 ? 'text-danger' : 'text-dark'" 
+                style="font-family: monospace, monospace !important; letter-spacing: -2px;"> 
               {{ res.available }}
             </h1>
             </div>
