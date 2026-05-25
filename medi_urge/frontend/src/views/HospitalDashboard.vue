@@ -34,7 +34,7 @@
           </button>
 
 
-          <div class="card-body text-center p-4 position-relative pb-5"   style="min-height: 250px;>
+          <div class="card-body text-center p-4 position-relative pb-5" style="min-height: 250px;">
             <h6 class="text-uppercase text-muted fw-bold mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
               {{ res.type }}
             </h6>
