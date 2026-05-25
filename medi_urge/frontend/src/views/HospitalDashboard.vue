@@ -34,7 +34,7 @@
           </button>
 
 
-          <div class="card-body text-center p-4">
+          <div class="card-body text-center p-4 d-flex flex-column h-100">
             <h6 class="text-uppercase text-muted fw-bold mb-3" style="font-size: 0.8rem; letter-spacing: 1px;">
               {{ res.type }}
             </h6>
@@ -48,10 +48,10 @@
             <p class="small text-muted mb-4">Price: {{ res.price > 0 ? 'Rs.' + res.price : 'Free' }}</p>
             
             <div class="d-flex justify-content-center gap-3 mt-auto">
-              <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;">
+              <button @click="updateResource(res.type, -1)" class="btn btn-outline-danger rounded-circle fw-bold d-flex align-items-center justify-content-center btn-rigid" style="width: 45px; height: 45px; flex-shrink: 0;">
                 -
               </button>
-              <button @click="updateResource(res.type, 1)" class="btn btn-outline-success rounded-circle fw-bold d-flex align-items-center justify-content-center" style="width: 45px; height: 45px; flex-shrink: 0;">
+              <button @click="updateResource(res.type, 1)" class="btn btn-outline-success rounded-circle fw-bold d-flex align-items-center justify-content-center btn-rigid" style="width: 45px; height: 45px; flex-shrink: 0;">
                 +
               </button>
             </div>
@@ -263,20 +263,28 @@ const requestHistory = computed(() => {
 <style scoped>
 .fw-black { font-weight: 900; }
 
- /* Locks the exact width and height so the card never shifts */
+ /* 1. Locks the container completely */
 .inventory-display-box {
-  width: 120px; 
-  height: 80px;
-  margin: 0 auto; /* Centers the box perfectly inside the card */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  min-height: 90px;
+  display: grid;
+  place-items: center; /* Grid centering is completely immune to child width changes */
+  margin: 10px 0;
 }
 
-/* Forces the digits to be equal width so the text itself doesn't wobble */
+/* 2. Forces exact number widths, even if the primary font fails */
 .tabular-text {
   font-variant-numeric: tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: -1px; /* Keeps the monospace font looking tight and professional */
   line-height: 1;
+}
+
+/* 3. Locks the button size permanently */
+.btn-rigid {
+  width: 45px !important;
+  height: 45px !important;
+  flex-shrink: 0 !important;
 }
 
 </style>
